@@ -1,23 +1,17 @@
 package com.rmalmeidax.biblioteca.DTO;
 
-import com.rmalmeidax.biblioteca.enums.Categoria;
-import com.rmalmeidax.biblioteca.enums.Situacao;
-
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class LivroDTO {
 
-    private Long id;
-    private String nome;
-    private Categoria categoria;
-    private Situacao situacao;
+	private Long id;
+	@NotBlank(message = "Preencha o campo nome.")
+	private String nome;
+
 }

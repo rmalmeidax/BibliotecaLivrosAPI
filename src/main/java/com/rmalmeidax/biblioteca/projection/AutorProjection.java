@@ -6,7 +6,7 @@ public interface AutorProjection {
 
     String getNome();
 
-    String getPais();
+    String getNacionalidade();
 
 
 }

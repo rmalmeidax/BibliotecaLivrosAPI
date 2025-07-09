@@ -24,9 +24,7 @@ public class LivroService {
         }
 
    public Livro save (Livro livro){
-        if (livro.getNome() == null || livro.getCategoria() == null || livro.getSituacao() == null){
-            throw new RuntimeException ("Preencha os campos vazios: Nome, Categoria ou Situação");
-        }
+        
         return livroRepository.save(livro);
    }
 

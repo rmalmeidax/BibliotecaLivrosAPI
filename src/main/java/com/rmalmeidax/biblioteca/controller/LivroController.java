@@ -30,8 +30,6 @@ public class LivroController {
 
         LivroDTO livroDto = new LivroDTO();
         livroDto.setNome(livro.getNome());
-        livroDto.setCategoria(livro.getCategoria());
-        livroDto.setSituacao(livro.getSituacao());
         return ResponseEntity.ok(livroDto);
     }
 
@@ -40,8 +38,6 @@ public class LivroController {
         Livro newlivro = livroService.save(livro);
 
         LivroDTO livroDTO = new LivroDTO();
-        livroDTO.setSituacao(newlivro.getSituacao());
-        livroDTO.setCategoria(newlivro.getCategoria());
         livroDTO.setNome(newlivro.getNome());
         return ResponseEntity.status(HttpStatus.CREATED).body(livroDTO);
     }

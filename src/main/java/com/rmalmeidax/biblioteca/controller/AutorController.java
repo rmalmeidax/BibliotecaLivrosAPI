@@ -28,7 +28,7 @@ public class AutorController {
 		AutorDTO autorDTO = new AutorDTO();
 		autorDTO.setId(autor.getId());
 		autorDTO.setNome(autor.getNome());
-		autorDTO.setPais(autor.getPais());
+		autorDTO.setNacionalidade(autor.getNacionalidade());
 
 		return ResponseEntity.ok(autorDTO);
 	}
@@ -45,7 +45,7 @@ public class AutorController {
 		AutorDTO autorDTO = new AutorDTO();
 		autorDTO.setNome(newautor.getNome());
 		autorDTO.setId(newautor.getId());
-		autorDTO.setPais(newautor.getPais());
+		autorDTO.setNacionalidade(newautor.getNacionalidade());
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(autorDTO);
 	}

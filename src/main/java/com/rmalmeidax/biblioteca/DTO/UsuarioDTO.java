@@ -21,8 +21,4 @@ public class UsuarioDTO {
 	@NotBlank(message = "Preencha o campo email.")
 	private String email;
 
-	@NotBlank(message = "Preencha o campo senha.")
-	@Size(min = 4, max = 8, message = "Senha no minimo 04 digitos e maximo 08 digitos.")
-	private String senha;
-
 }

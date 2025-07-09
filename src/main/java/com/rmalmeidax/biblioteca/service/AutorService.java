@@ -30,7 +30,7 @@ public class AutorService {
 
     @Transactional
     public Autor save(Autor autor) {
-        if(autor.getNome() == null && autor.getPais() == null){
+        if(autor.getNome() == null && autor.getNacionalidade() == null){
             throw new RuntimeException("Preencha o campo Nome do Autor");
          }
         return autorRepository.save(autor);

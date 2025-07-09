@@ -1,18 +1,18 @@
 package com.rmalmeidax.biblioteca.DTO;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class AutorDTO {
 	
 	private Long id;
+	@NotBlank(message = "Preencha o campo nome.")
 	private String nome;
-	private String pais;
+	private String nacionalidade;
 	
 }

@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 
@@ -18,8 +19,9 @@ public class Autor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
 	private Long id;
+	@NotBlank(message = "Preencha o campo nome")
 	private String nome;
-	private String pais;
+	private String nacionalidade;
 
 }
 
