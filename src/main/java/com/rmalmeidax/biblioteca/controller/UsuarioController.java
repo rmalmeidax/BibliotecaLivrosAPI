@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.rmalmeidax.biblioteca.DTO.UsuarioDTO;
 import com.rmalmeidax.biblioteca.entity.Usuario;
 import com.rmalmeidax.biblioteca.service.UsuarioService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -38,21 +40,19 @@ public class UsuarioController {
 		userDto.setId(userNew.getId());
 		userDto.setNome(userNew.getNome());
 		userDto.setEmail(userNew.getEmail());
-		
 
 		return ResponseEntity.ok(userDto);
 
 	}
 
 	@PostMapping
-	public ResponseEntity<UsuarioDTO> save(@RequestBody Usuario usuario) {
+	public ResponseEntity<UsuarioDTO> save(@Valid @RequestBody Usuario usuario) {
 		Usuario userNew = usuarioService.save(usuario);
 
 		UsuarioDTO userDto = new UsuarioDTO();
 		userDto.setId(userNew.getId());
 		userDto.setNome(userNew.getNome());
 		userDto.setEmail(userNew.getEmail());
-		
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(userDto);
 

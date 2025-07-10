@@ -1,5 +1,5 @@
 package com.rmalmeidax.biblioteca.enums;
 
-public enum Categoria {
+public enum CategoriaEnums {
     ROMANCE,AVENTURA,FICCAO,DRAMA,CIENTIFICO;
 }
