@@ -1,5 +1,8 @@
 package com.rmalmeidax.biblioteca.DTO;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -7,7 +10,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LoginDTO {
 
+	@NotBlank(message = "Campo inválido preencha o campo email.")
+	@Email(message = "Email inválido.")
 	private String email;
-	private String senha;
 
+	@NotBlank(message = "Campo inválido preencha o campo senha.")
+	@Size(min = 4, max = 8, message = "A senha deve conter no minimo 04 e no maximo 08 caracters.")
+	private String senha;
 }

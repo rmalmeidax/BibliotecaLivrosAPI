@@ -52,17 +52,17 @@ public class RegistroEmprestimoService {
 				}
 			}
 		}
-		
-		
-		if (registro.getDataDevolvida().isAfter(registro.getDataDevolucao())){
-			
-			long diasAtraso = ChronoUnit.DAYS.between(registro.getDataDevolucao(),registro.getDataDevolvida() );
-			Double multa = diasAtraso *1.00;
-			System.out.println("O valor da multa é de R$ " + multa + "total de dias " + diasAtraso );
-			}
-		else {
-			System.out.println("Entrega dentro do prazo.");
-			}
-		}
 
+		if (registro.getDataDevolvida().isAfter(registro.getDataDevolucao())) {
+
+			long diasAtraso = ChronoUnit.DAYS.between(registro.getDataDevolucao(), registro.getDataDevolvida());
+			Double multa = diasAtraso * 1.00;
+			System.out.println("O valor da multa é de R$ " + multa + "total de dias " + diasAtraso);
+		} else {
+			System.out.println("Entrega dentro do prazo.");
+		}
 	}
+
+}	
+	
+

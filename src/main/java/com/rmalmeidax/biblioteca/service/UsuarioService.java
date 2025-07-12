@@ -1,11 +1,9 @@
 package com.rmalmeidax.biblioteca.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.rmalmeidax.biblioteca.DTO.LoginDTO;
 import com.rmalmeidax.biblioteca.entity.Usuario;
 import com.rmalmeidax.biblioteca.repository.UsuarioRepository;
 
@@ -36,8 +34,8 @@ public class UsuarioService {
 	
 	public Usuario findByEmailAndSenha(String email, String senha){
 		
-		return usuarioRepository.findByEmailAndSenha(email, senha)
-				.orElseThrow(() -> new RuntimeException("E-mail ou senha inválido."));
+		return usuarioRepository.findByEmail(email)
+				.orElseThrow(() -> new RuntimeException("E-mail inválido."));
 	}
 	
 
