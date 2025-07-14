@@ -32,6 +32,6 @@ public class Livro {
 	
 	
 	@ManyToMany(mappedBy = "livros")
-	private List<RegistroEmprestimo> registroEmprestimos;
+	private List<Emprestimo> emprestimos;
 
 }

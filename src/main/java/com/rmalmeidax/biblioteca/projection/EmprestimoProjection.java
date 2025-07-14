@@ -7,7 +7,7 @@ import com.rmalmeidax.biblioteca.enums.CategoriaEnums;
 import com.rmalmeidax.biblioteca.enums.FinanceiroEnums;
 import com.rmalmeidax.biblioteca.enums.SituacaoEnums;
 
-public interface RegistroEmprestimoProjection {
+public interface EmprestimoProjection {
 
 	Long getId();
 

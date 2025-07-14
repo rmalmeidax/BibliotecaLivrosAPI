@@ -1,4 +1,4 @@
-package com.rmalmeidax.biblioteca.security;
+	package com.rmalmeidax.biblioteca.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

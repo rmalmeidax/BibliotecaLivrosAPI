@@ -2,11 +2,12 @@ package com.rmalmeidax.biblioteca.entity;
 
 import java.util.List;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -32,6 +33,11 @@ public class Usuario {
 	@NotBlank(message = "Preencha o campo nome.")
 	private String nome;
 
+	@NotBlank
+	@Size(max = 14)
+	@CPF
+	private String cpf;
+		
 	@Email(message = "Email Invalido")
 	@NotBlank(message = "Preencha o campo email.")
 	private String email;
@@ -41,7 +47,7 @@ public class Usuario {
 	private String senha;
 
 	@OneToMany(mappedBy = "usuario")
-	private List<RegistroEmprestimo> registroEmprestimo;
+	private List<Emprestimo> emprestimo;
 
 	@OneToOne(mappedBy = "usuario")
 	private Login login;
