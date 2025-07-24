@@ -1,0 +1,7 @@
+package com.rmalmeidax.estudos.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AutorList extends JpaRepository<AutorListRepository, Long>{
+
+}

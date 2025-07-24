@@ -1,0 +1,26 @@
+package DTO;
+
+import com.rmalmeidax.estudos.entity.Autor;
+
+public class AutorMinDTO {
+	
+	
+	private Long id;
+	private String nome;
+	private String pais;
+	
+	public AutorMinDTO() {
+	
+	}
+
+	public AutorMinDTO(Autor entity) {
+		
+		id =entity.getId();
+		nome = entity.getNome();
+		pais = entity.getPais();
+	}
+	
+	
+	
+
+}

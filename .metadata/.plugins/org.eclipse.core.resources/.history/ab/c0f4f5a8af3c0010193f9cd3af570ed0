@@ -1,0 +1,11 @@
+package com.rmalmeidax.estudos.projection;
+
+public interface AutorProjection {
+	
+	private Long id;
+	private String nome;
+	private String pais;
+	
+	
+
+}

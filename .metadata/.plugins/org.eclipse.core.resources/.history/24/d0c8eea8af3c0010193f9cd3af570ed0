@@ -1,0 +1,5 @@
+package com.rmalmeidax.estudos.projection;
+
+public interface AutorProjection {
+
+}

@@ -1,0 +1,50 @@
+package com.rmalmeidax.estudos.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.rmalmeidax.estudos.DTO.AutorListDTO;
+import com.rmalmeidax.estudos.DTO.AutorMinDTO;
+import com.rmalmeidax.estudos.service.AutorListService;
+import com.rmalmeidax.estudos.service.AutorService;
+
+
+@RestController
+@RequestMapping(name = "/list")
+public class AutorListController {
+	
+	@Autowired
+	private AutorListService autorListService;
+	
+	@Autowired
+	private AutorService autorService;
+	
+	@GetMapping(value = "/{id}")
+		public AutorListDTO findById(@PathVariable Long id) {
+		AutorListDTO result = autorListService.findById(id);
+		return result;
+			
+	}
+	
+	@GetMapping
+		public List<AutorListDTO> findAll() {
+		List<AutorListDTO> result = autorListService.findAll();
+		return result;
+				
+	}
+	
+	@GetMapping(value = "/{listId}/autor")
+		public List<AutorMinDTO> findAutor(@PathVariable Long listId){
+		List<AutorMinDTO> result = autorService.findByAutorList(listid);
+		return result;
+			
+	}
+	
+	
+
+}

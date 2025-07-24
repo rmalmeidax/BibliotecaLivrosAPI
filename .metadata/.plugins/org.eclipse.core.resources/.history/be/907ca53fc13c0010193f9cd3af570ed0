@@ -1,0 +1,5 @@
+package com.rmalmeidax.estudos.repository;
+
+public interface AutorList {
+
+}

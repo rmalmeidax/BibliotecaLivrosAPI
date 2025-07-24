@@ -1,0 +1,5 @@
+package com.rmalmeidax.estudos.entity;
+
+public class GameList {
+
+}

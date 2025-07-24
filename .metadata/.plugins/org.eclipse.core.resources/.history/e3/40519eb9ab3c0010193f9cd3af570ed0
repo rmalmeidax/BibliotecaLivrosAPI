@@ -1,0 +1,10 @@
+package com.rmalmeidax.estudos.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class AutorService {
+	
+	private LivroR
+
+}

@@ -1,0 +1,18 @@
+package com.rmalmeidax.estudos.entity;
+
+import com.rmalmeidax.estudos.repository.AutorRepository;
+
+public class Livros {
+	
+	AutorRepository autorrepository;
+	
+	private Long id;
+	private String titulo;
+	private Integer ano;
+	
+	
+	
+	
+	
+
+}

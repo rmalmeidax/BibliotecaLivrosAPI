@@ -1,0 +1,24 @@
+package com.rmalmeidax.estudos.entity;
+
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+public class Livros {
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String titulo;
+	private Integer ano;
+	
+	@ManyToOn
+	@JoinColumn(name = "autor_id")
+	private Autor autor;
+	
+	
+	
+	
+
+}

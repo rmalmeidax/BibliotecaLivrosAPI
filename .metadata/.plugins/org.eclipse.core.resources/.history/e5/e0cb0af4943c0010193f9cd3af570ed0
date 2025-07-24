@@ -1,0 +1,18 @@
+package com.rmalmeidax.estudos.entity;
+
+public class Livros {
+	
+	
+	
+	
+	
+	private Long id;
+	private String titulo;
+	private Integer ano;
+	
+	
+	
+	
+	
+
+}

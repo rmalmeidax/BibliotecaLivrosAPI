@@ -1,0 +1,28 @@
+package com.rmalmeidax.estudos.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.rmalmeidax.estudos.DTO.AutorListDTO;
+import com.rmalmeidax.estudos.entity.AutorList;
+import com.rmalmeidax.estudos.repository.AutorListRepository;
+
+@Service
+public class AutorListService {
+	
+	@Autowired
+	private AutorListRepository autorListRepository;
+	
+	@Transactional(readOnly = true)
+	public List<AutorListDTO> findAll(){
+		List<AutorList> result =autorListRepository.findAll();
+		return result.stream().map(x -> AutorListDTO(x)).toList();
+		
+	}
+	
+	
+
+}

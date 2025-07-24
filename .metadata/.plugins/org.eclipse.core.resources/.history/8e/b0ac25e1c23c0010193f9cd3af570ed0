@@ -1,0 +1,5 @@
+package com.rmalmeidax.estudos.DTO;
+
+public class AutorListDTO {
+
+}

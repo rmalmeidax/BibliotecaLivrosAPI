@@ -1,0 +1,36 @@
+package com.rmalmeidax.estudos.DTO;
+
+import com.rmalmeidax.estudos.entity.Autor;
+import com.rmalmeidax.estudos.projection.AutorMinProjection;
+
+public class AutorMinDTO {
+	
+	
+	private Long id;
+	private String nome;
+	private String pais;
+	
+	public AutorMinDTO() {
+	
+	}
+
+	public AutorMinDTO(Autor entity) {
+		
+		id =entity.getId();
+		nome = entity.getNome();
+		pais = entity.getPais();
+	}
+
+	public AutorMinDTO(AutorMinProjection projection) {
+		
+		id = projection.getId();
+		nome = projection.getNome();
+		pais = projection.getPais();
+	}
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,51 @@
+package com.rmalmeidax.estudos.service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.rmalmeidax.estudos.DTO.AutorDTO;
+import com.rmalmeidax.estudos.DTO.AutorMinDTO;
+import com.rmalmeidax.estudos.entity.Autor;
+import com.rmalmeidax.estudos.projection.AutorMinProjection;
+import com.rmalmeidax.estudos.repository.AutorRepository;
+
+@Service
+public class AutorService {
+	
+	
+	@Autowired
+	private AutorRepository autorRepository;
+	
+	@Transactional(readOnly = true)
+		public AutorDTO findById(Long id) {
+		Autor result = autorRepository.findById(id).get();
+		return new AutorDTO(result);
+		
+	}
+	
+	@Transactional(readOnly = true)
+		public List<AutorDTO> findAll(){
+		List <Autor> result = autorRepository.findAll();
+		return result.stream().map(x -> new AutorDTO(x)).toList();
+		
+		
+	}
+		
+	@Transactional(readOnly = true)
+		public List<AutorMinDTO> findBList(Long listId){
+		List<AutorMinProjection> result = autorRepository.searchByList(listId);
+		return result.stream()
+				.map(x -> new AutorMinDTO(x))
+				.collect(Collectors.toList());
+		
+	}
+	
+	
+	
+	
+
+}

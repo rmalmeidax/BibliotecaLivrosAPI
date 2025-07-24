@@ -1,0 +1,48 @@
+package com.rmalmeidax.estudos.DTO;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.rmalmeidax.estudos.entity.Autor;
+import com.rmalmeidax.estudos.repository.AutorRepository;
+
+import DTO.AutorDTO;
+import DTO.AutorMinDTO;
+
+@Service
+public class AutorService {
+	
+	
+	@Autowired
+	private AutorRepository autorRepository;
+	
+	@Transactional(readOnly = true)
+		public AutorDTO findById(Long id) {
+		Autor result = autorRepository.findById(id).get();
+		return new AutorDTO(result);
+		
+	}
+	
+	@Transactional(readOnly = true)
+		public List <AutorDTO> findAll(){
+		List <Autor> result = autorRepository.findAll();
+		List <AutorMinDTO> = result.stream().map(x -> new AutorDTO(x))toList();
+		result DTO;
+		
+	}
+	
+	@Transactional(readOnly = true)
+		public List<AutorMinDTO> fidBList(Long listId){
+		List<AutorMinProjection> result =autorRepository.searchByList(listId);
+		List <AutorMinDTO> dto = result.stream().map(x -> new AutorMinDTO(x))toList();
+		
+	}
+	
+	
+	
+	
+
+}
