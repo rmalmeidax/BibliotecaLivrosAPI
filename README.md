@@ -1,91 +1,59 @@
-# 📚 BibliotecaLivrosAPI
+📚 BibliotecaLivrosAPI
 
-Este é um projeto Java com Spring Boot que simula o gerenciamento de uma biblioteca de livros. Ele permite o cadastro de livros, usuários, além do controle de empréstimos e devoluções.
+API REST desenvolvida em Java com Spring Boot para gerenciamento de uma biblioteca, permitindo o cadastro de livros, autores, usuários, empréstimos e devoluções.
 
-## 🚀 Funcionalidades
-
-- Cadastro de livros
-- Cadastro de usuários
-- Empréstimo de livros
-- Devolução automática com prazo definido
-- Listagem de empréstimos
-- Autenticação de login
-
-## 🛠️ Tecnologias utilizadas
+🚀 Tecnologias
 
 - Java 17
 - Spring Boot
 - Spring Data JPA
-- Hibernate
 - PostgreSQL
-- Lombok
+- Spring Security + JWT
 - Maven
+- Lombok
+- Swagger UI
 
-## 🏁 Como rodar o projeto
+📁 Estrutura de Pacotes
 
-1. **Pré-requisitos:**
-   - Java 17+
-   - PostgreSQL
-   - Maven
-   - IDE (Eclipse, IntelliJ ou VS Code)
+- controller – Endpoints da API
+- service – Regras de negócio
+- repository – Persistência com Spring Data
+- entity – Entidades do banco de dados
+- DTO – Objetos de transferência de dados
+- mapper – Conversão entre entidades e DTOs
+- security – Autenticação com JWT
 
-2. **Clone o repositório:**
+▶️ Como Executar
 
-   ```bash
-   git clone https://github.com/seu-usuario/BibliotecaLivrosAPI.git
-   cd BibliotecaLivrosAPI
-   ```
+1. Clone o repositório:
 
-3. **Configure o banco de dados:**
+    git clone https://github.com/seu-usuario/BibliotecaLivrosAPI.git
 
-   Altere as configurações de acesso no arquivo `application.properties`:
+2. Configure o banco PostgreSQL:
 
-   ```properties
-   spring.datasource.url=jdbc:postgresql://localhost:5432/biblioteca
-   spring.datasource.username=seu_usuario
-   spring.datasource.password=sua_senha
-   ```
+    CREATE DATABASE biblioteca;
 
-4. **Crie o banco de dados:**
+3. Altere as configurações no application.properties (usuário, senha, etc).
 
-   No PostgreSQL:
+4. Compile e execute:
 
-   ```sql
-   CREATE DATABASE biblioteca;
-   ```
+    ./mvnw spring-boot:run
 
-5. **Execute o projeto:**
+5. Acesse a documentação Swagger em:
+   http://localhost:8080/swagger-ui.html
 
-   Na IDE ou via terminal:
+✅ Funcionalidades
 
-   ```bash
-   ./mvnw spring-boot:run
-   ```
+- Cadastro, listagem e atualização de livros
+- Gerenciamento de autores
+- Controle de usuários e autenticação JWT
+- Registro de empréstimos e devoluções
+- Filtros e paginação
 
-6. **Testar os endpoints:**
+🙏 Agradecimentos
 
-   Utilize ferramentas como o Postman ou Insomnia para testar as requisições HTTP.
+Este projeto foi desenvolvido com apoio do ChatGPT da OpenAI, que forneceu sugestões, explicações de erros e boas práticas para arquitetura Java com Spring Boot.
 
-## 📂 Estrutura de Pastas
-
-```
-src/
-├── main/
-│   ├── java/
-│   │   └── com.rmalmeidax.biblioteca/
-│   │       ├── controller/
-│   │       ├── entity/
-│   │       ├── repository/
-│   │       ├── service/
-│   │       └── DTO/
-│   └── resources/
-│       └── application.properties
-```
-
-## 🤝 Créditos
-
-Este projeto foi desenvolvido com o apoio do [ChatGPT](https://chat.openai.com/) da OpenAI, que auxiliou na criação de código, estrutura do projeto, comentários, boas práticas e documentação.
-
-## 📄 Licença
+📝 Licença
 
 Este projeto é livre para uso educacional. Sinta-se à vontade para estudar, modificar e aprimorar.
